@@ -214,6 +214,78 @@
             .weather-layout { flex-direction: column; align-items: flex-start; }
             .tg-activity-card { flex-direction: column; text-align: center; }
         }
+        /* --- МОБИЛЬНАЯ АДАПТАЦИЯ (Вставить в конец <style>) --- */
+
+@media screen and (max-width: 1024px) {
+    /* Уменьшаем отступы на планшетах */
+    section { padding: 80px 5%; }
+    .hero h1 { font-size: 3rem; }
+    
+    /* Погода: перестраиваем в колонку, чтобы влезало */
+    .weather-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    /* Центрируем элементы погоды */
+    .temp-section { justify-content: center; }
+    .update-tag { justify-content: center; }
+    .weather-grid { width: 100%; }
+}
+
+@media screen and (max-width: 768px) {
+    /* Шапка сайта */
+    header {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Главный экран (Hero) */
+    .hero h1 { 
+        font-size: 2.2rem; /* Уменьшаем огромный шрифт */
+        line-height: 1.2;
+    }
+    .hero-socials {
+        gap: 25px;
+    }
+
+    /* Секции и карточки */
+    section { padding: 60px 5%; }
+    .glass-card, .weather-card-modern, .tg-activity-card {
+        padding: 25px !important; /* Уменьшаем внутренние отступы */
+    }
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    /* Навыки (Skills) - в 1 колонку, чтобы круги были крупными */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Виджет погоды */
+    .city-info h3 { font-size: 1.8rem; }
+    .temp-value { font-size: 4rem; } /* Уменьшаем цифру температуры */
+    .deg-symbol { font-size: 2.5rem; }
+    .main-status-icon { font-size: 3rem; }
+    
+    /* Сетка деталей погоды (ветер, влажность) в 1 колонку */
+    .weather-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+    
+    /* Карточка телеграма */
+    .tg-activity-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
